@@ -173,7 +173,9 @@ execute pathogen#infect()
 let g:airline_theme 			        = 'powerlineish'
 let g:airline#extensions#branch#enabled 	= 1
 let g:airline#extensions#syntastic#enabled  	= 1
-
+let g:airline#extensions#tabline#enabled 	= 1
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
 
 "Set the status line options. Make it show more information.
 set laststatus=2
