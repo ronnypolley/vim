@@ -1,10 +1,10 @@
-" Use Vim settings, rather than Vi settings (much better!).
+﻿" Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
 " use adobe font
-set guifont=Source\ Code\ Pro\ Semibold:h9
-"set guifont=Source_Code_Pro:h10:b:cANSI
+" downloaded from https://github.com/fncll/vimstuff
+set guifont=Source\ Code\ Pro\ Medium:h10
 
 " set syntax highlighting to on
 syn on
@@ -174,9 +174,8 @@ let g:airline_theme 			        = 'powerlineish'
 let g:airline#extensions#branch#enabled 	= 1
 let g:airline#extensions#syntastic#enabled  	= 1
 let g:airline#extensions#tabline#enabled 	= 1
+let g:airline_powerline_fonts			= 1
 set encoding=utf-8
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
 
 "Set the status line options. Make it show more information.
 set laststatus=2
