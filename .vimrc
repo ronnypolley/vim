@@ -10,7 +10,8 @@ set guifont=Source\ Code\ Pro\ Medium:h10
 syn on
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
+" TODO: deactivated for Vundle
+"filetype plugin on
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -165,7 +166,27 @@ endfunction
 command! PrettyXML call DoPrettyXML()
 
 " start addon manager
-execute pathogen#infect()
+" I'm switching to Vundle
+"execute pathogen#infect()
+"-------------------------Vundle-------------------------------------------
+" git clone https://github.com/VundleVim/Vundle.vim.git
+set rtp+=~/vimfiles/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" git plugin
+Plugin 'tpope/vim-fugitive'
+" vim-airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" NERDTree plugin
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+"-------------------------Vundle-------------------------------------------
 
 """"""""""""""""""""""""""""""
 " airline
