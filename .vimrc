@@ -3,15 +3,12 @@
 set nocompatible
 
 " use adobe font
-" downloaded from https://github.com/fncll/vimstuff
+" downloaded from https://github.com/fncll/vimstuff as this is the version
+" with the correct symbols for airline
 set guifont=Source\ Code\ Pro\ Medium:h10
 
 " set syntax highlighting to on
 syn on
-
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-" TODO: deactivated for Vundle
-"filetype plugin on
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -33,7 +30,6 @@ set showcmd
 let &guioptions = substitute(&guioptions, "t", "", "g")
 let &guioptions = substitute(&guioptions, "T", "", "g")
 let &guioptions = substitute(&guioptions, "m", "", "g")
-" set guioptions=egrL
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -56,6 +52,12 @@ set directory=.,$TEMP
 " : should be used in search
 set iskeyword+=:
 
+" bugfix for babun console showing wrong cursor in vim
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
 " use incremental search
 set incsearch
 
@@ -67,9 +69,6 @@ set shellslash
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
-
-" OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -166,8 +165,6 @@ endfunction
 command! PrettyXML call DoPrettyXML()
 
 " start addon manager
-" I'm switching to Vundle
-"execute pathogen#infect()
 "-------------------------Vundle-------------------------------------------
 " git clone https://github.com/VundleVim/Vundle.vim.git
 set rtp+=~/vimfiles/bundle/Vundle.vim
@@ -182,7 +179,9 @@ Plugin 'vim-airline/vim-airline-themes'
 " NERDTree plugin
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-
+" Plugin for markdown support
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
