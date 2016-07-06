@@ -33,6 +33,9 @@ let &guioptions = substitute(&guioptions, "m", "", "g")
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
+" add mapping for tag jumping as it is not defined. This works on german
+" keyboard layouts. (You must press CTRL-AltGr-9)
+nnoremap <C-]> <C-]>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -201,4 +204,3 @@ set encoding=utf-8
 set laststatus=2
 set statusline=%F%m%r%h%w%{fugitive#statusline()}\ [FORMAT=%{&ff}]\ [TYPE=%Y]\[POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")} 
 
-"colorscheme zenburn
