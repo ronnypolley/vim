@@ -55,6 +55,9 @@ set directory=.,$TEMP
 " : should be used in search
 set iskeyword+=:
 
+" better characters for non printable characters if you use :set list
+set listchars=tab:>-,trail:-
+
 " bugfix for babun console showing wrong cursor in vim
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
