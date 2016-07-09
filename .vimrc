@@ -188,6 +188,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin for markdown support
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+" colorscheme soloarized
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -207,3 +209,5 @@ set encoding=utf-8
 set laststatus=2
 set statusline=%F%m%r%h%w%{fugitive#statusline()}\ [FORMAT=%{&ff}]\ [TYPE=%Y]\[POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")} 
 
+" set colorscheme to solarized
+colorscheme solarized
